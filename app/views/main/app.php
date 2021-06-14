@@ -215,22 +215,17 @@ function template_sidebar() {
                 <ul id="accordion-menu">
                     <li class="dropdown">
                         <a href="javascript:;" class="dropdown-toggle no-arrow">
-                            <span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
-                        </a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="javascript:;" class="dropdown-toggle no-arrow">
                             <span class="micon dw dw-library"></span><span class="mtext">Informasi Bibit</span>
                         </a>
                     </li>
                     <li class="dropdown">
                         <a href="javascript:;" class="dropdown-toggle">
-                            <span class="micon dw dw-apartment"></span><span class="mtext">Konfirmasi Pengajuan</span>
+                            <span class="micon dw dw-apartment"></span><span class="mtext">Konfirmasi Donasi</span>
                         </a>
                         <ul class="submenu">
-                            <li><a href="ui-buttons.html">Pengajuan Perorangan</a></li>
-                            <li><a href="ui-cards.html">Pengajuan Kelompok</a></li>
-                            <li><a href="ui-cards-hover.html">Pengajuan Institusi</a></li>
+                            <li><a href="ui-buttons.html">Donasi Perorangan</a></li>
+                            <li><a href="ui-cards.html">Donasi Kelompok</a></li>
+                            <li><a href="ui-cards-hover.html">Donasi Institusi</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
