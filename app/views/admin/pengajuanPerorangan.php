@@ -2,21 +2,21 @@
     include '../app/views/main/app.php';
 ?>
 
-<?= template_header('Home') ?>
+<?= template_header('Pengajuan Perorangan') ?>
 <?= template_navbar() ?>
 <?= template_sidebar() ?>
 <div class="main-container">
 <!-- Simple Datatable start -->
 <div class="card-box mb-30">
 <div class="pd-20">
-    <h4 class="text-blue h4">Data Table Pengajuan Donasi Kelompok</h4>
+    <h4 class="text-blue h4">Data Table Pengajuan Donasi Perorangan</h4>
 </div>
 <div class="pb-20">
     <table class="data-table table stripe hover nowrap">
         <thead>
             <tr>
                 <th>No</th>
-                <th>Nama Ketua</th>
+                <th>Nama</th>
                 <th>Bibit</th>
                 <th>Jumlah Bibit</th>
                 <th>Status</th>
