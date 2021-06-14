@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2021 at 04:47 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- Generation Time: Jun 14, 2021 at 06:40 PM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pemweb-erigro.id`
+-- Database: `pemweb-erigro_id`
 --
 
 -- --------------------------------------------------------
@@ -44,7 +45,7 @@ CREATE TABLE `donasi` (
   `idDonasi` int(11) NOT NULL,
   `idUser` int(11) NOT NULL,
   `idBibit` int(11) NOT NULL,
-  `pengajuan` varchar(50) NOT NULL,
+  `pengajuan` enum('perorangan','kelompok','institusi') NOT NULL,
   `tujuan` varchar(50) NOT NULL,
   `luasLahan` varchar(6) NOT NULL,
   `status` enum('menunggu','diterima','ditolak') NOT NULL,
