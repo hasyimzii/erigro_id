@@ -2,14 +2,10 @@
     include '../app/views/main/app.php';
 ?>
 
-<?= template_header('Home') ?>
+<?= template_header('Detail Bibit') ?>
 <?= template_navbar() ?>
 <?= template_sidebar() ?>
 <div class="main-container">
-    <?php 
-        foreach($data as $d) {
-            echo $d['username'];
-        }
-    ?>
+    <?php $data['bibit']; ?>
 </div>
 <?= template_footer() ?>

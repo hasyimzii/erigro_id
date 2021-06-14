@@ -1,12 +1,4 @@
 <?php
-// connection database
-// $databaseHost = 'localhost';
-// $databaseName = 'pemweb-erigro_id';
-// $databaseUsername = 'root';
-// $databasePassword = '';
-
-// $conn = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
-
 // encrypt id
 function encrypt($sData){
     $id=(double)$sData*525325.24;

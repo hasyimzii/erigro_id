@@ -2,6 +2,7 @@
 
 class Home extends Controller {
     public function index() {
-        $this->view('home/index');
+        $data = $this->model('UserModel')->getUser();
+        $this->view('home/index', $data);
     }
 }

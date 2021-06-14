@@ -2,7 +2,14 @@
 
 class Admin extends Controller {
     public function index() {
-        $this->view('admin/index');
+        $data = $this->model('BibitModel')->getBibit();
+        $this->view('admin/index', $data);
+    }
+
+    public function detailBibit($idBibit) {
+        $id = decrypt($idBibit);
+        $data = $this->model('BibitModel')->getBibitId($id);
+        $this->view('admin/detailBibit', $data);
     }
 
     public function pengajuanInstansi() {
