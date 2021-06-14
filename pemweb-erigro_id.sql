@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2021 at 06:40 PM
+-- Generation Time: Jun 14, 2021 at 06:46 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -43,7 +43,7 @@ CREATE TABLE `bibit` (
 
 CREATE TABLE `donasi` (
   `idDonasi` int(11) NOT NULL,
-  `idUser` int(11) NOT NULL,
+  `idProfil` int(11) NOT NULL,
   `idBibit` int(11) NOT NULL,
   `pengajuan` enum('perorangan','kelompok','institusi') NOT NULL,
   `tujuan` varchar(50) NOT NULL,
@@ -61,6 +61,7 @@ CREATE TABLE `donasi` (
 CREATE TABLE `profil` (
   `idProfil` int(11) NOT NULL,
   `idUser` int(11) NOT NULL,
+  `namaLengkap` varchar(30) NOT NULL,
   `alamat` varchar(30) NOT NULL,
   `nik` varchar(30) NOT NULL,
   `noHp` varchar(15) NOT NULL,
@@ -96,7 +97,7 @@ ALTER TABLE `bibit`
 --
 ALTER TABLE `donasi`
   ADD PRIMARY KEY (`idDonasi`),
-  ADD KEY `donasi-user` (`idUser`),
+  ADD KEY `donasi-user` (`idProfil`),
   ADD KEY `donasi-bibit` (`idBibit`);
 
 --
@@ -149,7 +150,7 @@ ALTER TABLE `user`
 --
 ALTER TABLE `donasi`
   ADD CONSTRAINT `donasi-bibit` FOREIGN KEY (`idBibit`) REFERENCES `bibit` (`idBibit`),
-  ADD CONSTRAINT `donasi-user` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`);
+  ADD CONSTRAINT `donasi-profil` FOREIGN KEY (`idProfil`) REFERENCES `profil` (`idProfil`);
 
 --
 -- Constraints for table `profil`
