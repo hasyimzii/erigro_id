@@ -1,11 +1,11 @@
 <?php 
 // connection database
-// $databaseHost = '127.0.0.1';
-// $databaseName = 'uts192410101047';
+// $databaseHost = 'localhost';
+// $databaseName = 'pemweb-erigro_id';
 // $databaseUsername = 'root';
 // $databasePassword = '';
 
-$conn = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+// $conn = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
 
 // encrypt id
 function encrypt($sData){
@@ -28,7 +28,7 @@ function template_header($title) {
     <head>
         <!-- Basic Page Info -->
         <meta charset="utf-8">
-        <title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
+        <title>$title</title>
         <!-- Site favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="vendors/images/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="vendors/images/favicon-32x32.png">
