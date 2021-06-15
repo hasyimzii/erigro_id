@@ -6,7 +6,6 @@
 <?= template_navbar() ?>
 <?= template_sidebar() ?>
 <div class="main-container">
-<form action="<?= BASEURL; ?>/admin/updateBibit" method="post">
 <!-- Default Basic Forms Start -->
 <div class="pd-20 card-box mb-30">
 <div class="clearfix">
@@ -40,16 +39,5 @@
     </div>
     <button type="submit" class="btn btn-block btn-primary">Submit</button>
 </form>
-
-<div class="collapse collapse-box" id="basic-form1" >
-    <div class="code-box">
-        <div class="clearfix">
-            <a href="javascript:;" class="btn btn-primary btn-sm code-copy pull-left"  data-clipboard-target="#copy-pre"><i class="fa fa-clipboard"></i> Copy Code</a>
-            <a href="#basic-form1" class="btn btn-primary btn-sm pull-right" rel="content-y"  data-toggle="collapse" role="button"><i class="fa fa-eye-slash"></i> Hide Code</a>
-        </div>
-        <pre><code class="xml copy-pre" id="copy-pre">
-
-</form>
-
 </div>
 <?= template_footer() ?>
