@@ -49,9 +49,9 @@
                             <i class="dw dw-more"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                            <a class="dropdown-item" href="<?= BASEURL; ?>/admin/detailBibit/<?= encrypt($d['idBibit']); ?>"><i class="dw dw-eye"></i> View</a>
+                            <a class="dropdown-item" href="<?= BASEURL; ?>/admin/detailBibit/<?= encrypt($d['idBibit']); ?>"><i class="dw dw-eye"></i> Detail</a>
                             <a class="dropdown-item" href="<?= BASEURL; ?>/admin/editBibit/<?= encrypt($d['idBibit']); ?>"><i class="dw dw-edit2"></i> Edit</a>
-                            <a class="dropdown-item" href="<?= BASEURL; ?>/admin/deleteBibit/<?= encrypt($d['idBibit']); ?>" id="sa-warning"><i class="dw dw-delete-3"></i> Delete</a>
+                            <a class="dropdown-item" href="<?= BASEURL; ?>/admin/deleteBibit/<?= encrypt($d['idBibit']); ?>" onclick="return confirm('Yakin menghapus?');"><i class="dw dw-delete-3"></i> Delete</a>
                         </div>
                     </div>
                 </td>
