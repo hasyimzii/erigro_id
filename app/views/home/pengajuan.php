@@ -2,43 +2,71 @@
     include '../app/views/main/app.php';
 ?>
 
-<?= template_header('Detail Bibit') ?>
+<?= template_header('Pengajuan Donasi') ?>
 <?= template_navbar() ?>
 <?= template_sidebar() ?>
 <div class="main-container">
-    <h1>bibit : <?php $data['bibit']; ?></h1>
-    <?php $data['jumlahBibit']; ?>
-    <?php $data['jadwalAmbil']; ?>
- <!-- Default Basic Forms Start -->
+<form action="<?= BASEURL; ?>/admin/createBibit" method="post">
+<!-- Default Basic Forms End -->
+
+<!-- horizontal Basic Forms Start -->
 <div class="pd-20 card-box mb-30">
-<div class="clearfix">
-    <div class="pull-left">
-        <h4 class="text-blue h4">Detail Bibit Erigro.id</h4>
-        <p class="mb-30">Form ini telah diisi dengan benar</p>
+    <div class="clearfix">
+        <div class="pull-left">
+            <h4 class="text-blue h4">Form Pengajuan Donasi Bibit</h4>
+            <p class="mb-30">Masukkan data pengajuan donasi bibit dengan sebenar-benarnya!</p>
+        </div>
+        <div class="pull-right">
+            <a href="#horizontal-basic-form1" class="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i class="fa fa-code"></i> ERIGRO.ID</a>
+        </div>
     </div>
-    <div class="pull-right">
-        <a href="#basic-form1" class="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i class="fa fa-code"></i>ERIGRO.ID</a>
-    </div>
-</div>
 <form>
-    <div class="form-group row">
-        <label class="col-sm-12 col-md-2 col-form-label">Nama Bibit :</label>
-        <div class="col-sm-12 col-md-10">
-            <label class="col-sm-12 col-md-2 col-form-label"><?php $data['bibit']; ?></label>
+    <div class="form-group">
+        <label>Nama</label>
+        <input name="??" class="form-control" type="text" placeholder="Input Nama Sesuai Kartu Identitas">
+    </div>
+    <div class="form-group">
+        <label>Alamat</label>
+        <input name="??" class="form-control" type="text" placeholder="Input Alamat Sesuai Kartu Identitas">
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <div class="form-group">
+                <label>NIK</label>
+                <input name="??" type="text" class="form-control" placeholder="Input NIK">
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="form-group">
+                <label>No Telepon</label>
+                <input name="??" type="tel" class="form-control" value="+62-111-111-111-111">
+            </div>
         </div>
     </div>
-    <div class="form-group row">
-        <label class="col-sm-12 col-md-2 col-form-label">Jumlah Bibit :</label>
-        <div class="col-sm-12 col-md-10">
-            <label class="col-sm-12 col-md-2 col-form-label"><?php $data['jumlahBibit']; ?></label>
+    <div class="form-group">
+        <label>Tujuan Pengajuan Donasi</label>
+        <textarea name="??" class="form-control"></textarea>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <div class="form-group">
+                <label>Bibit</label>
+                <input name="??" type="text" class="form-control" placeholder="Input Bibit Yang Diajukan">
+            </div>
         </div>
-    <div class="form-group row">
-        <label class="col-sm-12 col-md-2 col-form-label">Jadwal Ambil :</label>
-        <div class="col-sm-12 col-md-10">
-            <label class="col-sm-12 col-md-2 col-form-label"><?php $data['jadwalAmbil']; ?></label>
+        <div class="col-md-6 col-sm-12">
+            <div class="form-group">
+                <label>Jumlah Bibit</label>
+                <input name="??" type="number" class="form-control" value="0">
+            </div>
         </div>
-    <!-- </div>
-    <div class="form-group row">
+    </div>
+    <div class="form-group">
+        <label>Luas Lahan</label>
+        <input name="??" class="form-control" type="text" placeholder="Input Luas Lahan">
+    </div>
+    
+    <!-- <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Email</label>
         <div class="col-sm-12 col-md-10">
             <input class="form-control" value="bootstrap@example.com" type="email">
@@ -116,13 +144,15 @@
         </div>
     </div> -->
 </form>
-<!-- <div class="collapse collapse-box" id="basic-form1" >
+<div class="collapse collapse-box" id="horizontal-basic-form1" >
     <div class="code-box">
         <div class="clearfix">
-            <a href="javascript:;" class="btn btn-primary btn-sm code-copy pull-left"  data-clipboard-target="#copy-pre"><i class="fa fa-clipboard"></i> Copy Code</a>
-            <a href="#basic-form1" class="btn btn-primary btn-sm pull-right" rel="content-y"  data-toggle="collapse" role="button"><i class="fa fa-eye-slash"></i> Hide Code</a>
+            <a href="javascript:;" class="btn btn-primary btn-sm code-copy pull-left"  data-clipboard-target="#horizontal-basic"><i class="fa fa-clipboard"></i> Copy Code</a>
+            <a href="#horizontal-basic-form1" class="btn btn-primary btn-sm pull-right" rel="content-y"  data-toggle="collapse" role="button"><i class="fa fa-eye-slash"></i> Hide Code</a>
         </div>
-        <pre><code class="xml copy-pre" id="copy-pre">    -->
+        <pre><code class="xml copy-pre" id="horizontal-basic">
+
+</form>
 
 </div>
 <?= template_footer() ?>
