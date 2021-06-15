@@ -29,6 +29,25 @@ class Admin extends Controller {
         }
     }
 
+    public function editBibit($idBibit) {
+        $id = $this->decrypt($idBibit);
+        $data = $this->model('BibitModel')->getBibitId($id);
+        $this->view('admin/editBibit', $data);
+    }
+
+    public function updateBibit() {
+        if($this->model('BibitModel')->updateBibit($_POST)>0) {
+            Flasher::setFlash('Data berhasil diedit!', 'success');
+            header('Location: '. BASEURL . '/admin');
+            exit;
+        }
+        else {
+            Flasher::setFlash('Data gagal diedit!', 'danger');
+            header('Location: '. BASEURL . '/admin');
+            exit;
+        }
+    }
+
     public function deleteBibit($idBibit) {
         $id = $this->decrypt($idBibit);
         if($this->model('BibitModel')->deleteBibit($id)>0) {
