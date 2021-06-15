@@ -13,7 +13,11 @@ class Admin extends Controller {
     }
 
     public function createBibit() {
-        if($this->model('BibitModel')->createBibit($_POST)>0) {
+        $this->view('admin/createBibit');
+    }
+
+    public function storeBibit() {
+        if($this->model('BibitModel')->storeBibit($_POST)>0) {
             Flasher::setFlash('Data berhasil ditambahkan!', 'success');
             header('Location: '. BASEURL . '/admin');
             exit;

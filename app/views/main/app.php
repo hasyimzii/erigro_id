@@ -209,7 +209,7 @@ function template_sidebar() {
             <div class="sidebar-menu">
                 <ul id="accordion-menu">
                     <li class="dropdown">
-                        <a href="javascript:;" class="dropdown-toggle no-arrow">
+                        <a href="$baseurl/admin/index" class="dropdown-toggle no-arrow">
                             <span class="micon dw dw-library"></span><span class="mtext">Informasi Bibit</span>
                         </a>
                     </li>
@@ -218,9 +218,9 @@ function template_sidebar() {
                             <span class="micon dw dw-apartment"></span><span class="mtext">Konfirmasi Donasi</span>
                         </a>
                         <ul class="submenu">
-                            <li><a href="ui-buttons.html">Donasi Perorangan</a></li>
-                            <li><a href="ui-cards.html">Donasi Kelompok</a></li>
-                            <li><a href="ui-cards-hover.html">Donasi Institusi</a></li>
+                            <li><a href="$baseurl/admin/pengajuanPerorangan">Donasi Perorangan</a></li>
+                            <li><a href="$baseurl/admin/pengajuanKelompok">Donasi Kelompok</a></li>
+                            <li><a href="$baseurl/admin/pengajuanInstansi">Donasi Institusi</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

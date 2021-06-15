@@ -12,9 +12,15 @@
 </div>
 
 <!-- Simple Datatable start -->
-<div class="card-box mb-30">
-<div class="pd-20">
-    <h4 class="text-blue h4">Data Table Informasi Bibit Erigro.id</h4>
+<div class="pd-20 card-box mb-30">
+<div class="clearfix mb-20">
+    <div class="pull-left">
+        <h4 class="text-blue h4">Informasi Bibit Erigro.id</h4>
+        <p class="mb-30">Data bibit yang tersedia</p>
+    </div>
+    <div class="pull-right">
+        <a class="btn btn-primary" href="<?= BASEURL; ?>/admin/createBibit" role="button"><i class="icon-copy fa fa-plus" aria-hidden="true"></i> Tambah Bibit</a>
+    </div>
 </div>
 <div class="pb-20">
     <table class="data-table table stripe hover nowrap">
@@ -28,12 +34,16 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach($data as $d) : ?>
+            <?php
+            $no = 0;
+            foreach($data as $d) : 
+                $no++;
+            ?>
             <tr>
-                <td class="table-plus">Gloria F. Mead</td>
-                <td>25</td>
-                <td>Sagittarius</td>
-                <td>2829 Trainer Avenue Peoria, IL 61602 </td>
+                <td class="table-plus"><?= $no; ?></td>
+                <td><?= $d['bibit']; ?></td>
+                <td><?= $d['jumlahBibit']; ?></td>
+                <td><?= $d['jadwalAmbil']; ?></td>
                 <td>
                     <div class="dropdown">
                         <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">

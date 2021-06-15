@@ -19,7 +19,7 @@ class BibitModel {
         return $this->db->single();
     }
 
-    public function createBibit($data) {
+    public function storeBibit($data) {
         $query = "INSERT INTO bibit VALUES('', :bibit, :jumlahBibit, :jadwalAmbil)";
         $this->db->query($query);
         $this->db->bind('bibit', $data['bibit']);
