@@ -17,7 +17,7 @@
             <p class="mb-30">Masukkan data pengajuan donasi bibit dengan sebenar-benarnya!</p>
         </div>
         <div class="pull-right">
-            <a href="#horizontal-basic-form1" class="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i class="fa fa-code"></i> ERIGRO.ID</a>
+            <a href="#horizontal-basic-form1" class="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i class="fa fa-code"></i> Submit</a>
         </div>
     </div>
 <form>
