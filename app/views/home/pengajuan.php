@@ -13,8 +13,8 @@
 <div class="pd-20 card-box mb-30">
     <div class="clearfix">
         <div class="pull-left">
-            <h4 class="text-blue h4">Form Pengajuan Donasi Bibit</h4>
-            <p class="mb-30">Masukkan data pengajuan donasi bibit dengan sebenar-benarnya!</p>
+            <h4 class="text-blue h4">Pengajuan Konseling Erigro.id</h4>
+            <p class="mb-30">Isilah kuesioner dibawah ini sesuai dengan keadaan lahan anda</p>
         </div>
         <div class="pull-right">
             <a href="#horizontal-basic-form1" class="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i class="fa fa-code"></i> Submit</a>
