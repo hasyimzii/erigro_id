@@ -6,10 +6,17 @@
 <?= template_navbar() ?>
 <?= template_sidebar() ?>
 <div class="main-container">
-<!-- Simple Datatable start -->
-<div class="card-box mb-30">
-<div class="pd-20">
-    <h4 class="text-blue h4">Data Table Pengajuan Donasi Perorangan</h4>
+
+<!-- Default Basic Forms Start -->
+<div class="pd-20 card-box mb-30">
+<div class="clearfix">
+    <div class="pull-left">
+        <h4 class="text-blue h4">Data Pengajuan Donasi Perorangan</h4>
+        <p class="mb-30"></p>
+    </div>
+    <div class="pull-right">
+        <a class="btn btn-secondary" href="<?= BASEURL; ?>/admin" role="button"><i class="icon-copy fa fa-home" aria-hidden="true"></i> Kembali</a>
+    </div>
 </div>
 <div class="pb-20">
     <table class="data-table table stripe hover nowrap">
