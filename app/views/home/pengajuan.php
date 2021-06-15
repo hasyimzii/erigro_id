@@ -4,7 +4,6 @@
 
 <?= template_header('Pengajuan Donasi') ?>
 <?= template_navbar() ?>
-<?= template_sidebar() ?>
 <div class="main-container">
 <form action="<?= BASEURL; ?>/admin/createBibit" method="post">
 <!-- Default Basic Forms End -->
