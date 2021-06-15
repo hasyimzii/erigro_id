@@ -18,4 +18,15 @@ class BibitModel {
         $this->db->bind('id', $id);
         return $this->db->single();
     }
+
+    public function createBibit($data) {
+        $query = "INSERT INTO bibit VALUES('', :bibit, :jumlahBibit, :jadwalAmbil)";
+        $this->db->query($query);
+        $this->db->bind('bibit', $data['bibit']);
+        $this->db->bind('jumlahBibit', $data['jumlahBibit']);
+        $this->db->bind('jadwalAmbil', $data['jadwalAmbil']);
+
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
 }

@@ -7,9 +7,16 @@ class Admin extends Controller {
     }
 
     public function detailBibit($idBibit) {
-        $id = decrypt($idBibit);
+        $id = $this->decrypt($idBibit);
         $data = $this->model('BibitModel')->getBibitId($id);
         $this->view('admin/detailBibit', $data);
+    }
+
+    public function createBibit() {
+        if($this->model('BibitModel')->createBibit($_POST)>0) {
+            header('Location: '. BASEURL . '/admin');
+            exit;
+        }
     }
 
     public function pengajuanInstansi() {
