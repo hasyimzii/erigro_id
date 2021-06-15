@@ -7,10 +7,6 @@
 <?= template_sidebar() ?>
 <div class="main-container">
 
-<div class="card-box mb-30">
-    <?php Flasher::flash(); ?>
-</div>
-
 <!-- Simple Datatable start -->
 <div class="pd-20 card-box mb-30">
 <div class="clearfix mb-20">
@@ -21,6 +17,9 @@
     <div class="pull-right">
         <a class="btn btn-primary" href="<?= BASEURL; ?>/admin/createBibit" role="button"><i class="icon-copy fa fa-plus" aria-hidden="true"></i> Tambah Bibit</a>
     </div>
+</div>
+<div class="card-box mb-30">
+    <?php Flasher::flash(); ?>
 </div>
 <div class="pb-20">
     <table class="data-table table stripe hover nowrap">

@@ -14,7 +14,7 @@ class BibitModel {
     }
 
     public function getBibitId($id) {
-        $this->db->query('SELECT * FROM '. $this->table .'WHERE idBibit=:id');
+        $this->db->query("SELECT * FROM $this->table WHERE idBibit=:id");
         $this->db->bind('id', $id);
         return $this->db->single();
     }
