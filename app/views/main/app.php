@@ -280,6 +280,9 @@ function template_footer() {
         <script src="$baseurl/src/plugins/datatables/js/vfs_fonts.js"></script>
         <!-- Datatable Setting js -->
         <script src="$baseurl/vendors/scripts/datatable-setting.js"></script></body>
+        <!-- add sweet alert js & css in footer -->
+        <script src="$baseurl/src/plugins/sweetalert2/sweetalert2.all.js"></script>
+        <script src="$baseurl/src/plugins/sweetalert2/sweet-alert.init.js"></script>
     </body>
     </html>
     EOT;

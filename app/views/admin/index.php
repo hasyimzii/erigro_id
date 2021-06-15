@@ -6,6 +6,11 @@
 <?= template_navbar() ?>
 <?= template_sidebar() ?>
 <div class="main-container">
+
+<div class="card-box mb-30">
+    <?php Flasher::flash(); ?>
+</div>
+
 <!-- Simple Datatable start -->
 <div class="card-box mb-30">
 <div class="pd-20">
@@ -36,8 +41,8 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                             <a class="dropdown-item" href="<?= BASEURL; ?>/admin/detailBibit/<?= encrypt($d['idBibit']); ?>"><i class="dw dw-eye"></i> View</a>
-                            <a class="dropdown-item" href="<?= BASEURL; ?>/admin/edit/<?= encrypt($d['idBibit']); ?>"><i class="dw dw-edit2"></i> Edit</a>
-                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
+                            <a class="dropdown-item" href="<?= BASEURL; ?>/admin/editBibit/<?= encrypt($d['idBibit']); ?>"><i class="dw dw-edit2"></i> Edit</a>
+                            <a class="dropdown-item" href="<?= BASEURL; ?>/admin/deleteBibit/<?= encrypt($d['idBibit']); ?>" id="sa-warning"><i class="dw dw-delete-3"></i> Delete</a>
                         </div>
                     </div>
                 </td>

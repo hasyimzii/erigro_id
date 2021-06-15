@@ -29,4 +29,13 @@ class BibitModel {
         $this->db->execute();
         return $this->db->rowCount();
     }
+
+    public function deleteBibit($id) {
+        $query = "DELETE FROM $this->table WHERE idBibit=:id";
+        $this->db->query($query);
+        $this->db->bind('id', $id);
+
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
 }
