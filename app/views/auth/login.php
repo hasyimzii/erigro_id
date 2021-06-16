@@ -65,9 +65,6 @@
                                     <label class="custom-control-label" for="customCheck1">Remember</label>
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <div class="forgot-password"><a href="forgot-password.html">Forgot Password</a></div>
-                            </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
