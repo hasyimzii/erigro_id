@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2021 at 06:46 PM
+-- Generation Time: Jun 15, 2021 at 06:31 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -38,19 +38,19 @@ CREATE TABLE `bibit` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `donasi`
+-- Table structure for table `pengajuan`
 --
 
-CREATE TABLE `donasi` (
-  `idDonasi` int(11) NOT NULL,
+CREATE TABLE `pengajuan` (
+  `idPengajuan` int(11) NOT NULL,
   `idProfil` int(11) NOT NULL,
   `idBibit` int(11) NOT NULL,
-  `pengajuan` enum('perorangan','kelompok','institusi') NOT NULL,
-  `tujuan` varchar(50) NOT NULL,
-  `luasLahan` varchar(6) NOT NULL,
-  `status` enum('menunggu','diterima','ditolak') NOT NULL,
+  `jumlahPengajuan` int(6) NOT NULL,
+  `tujuan` varchar(30) NOT NULL,
+  `luasLahan` int(6) NOT NULL,
+  `statusPengajuan` enum('menunggu verifikasi','proposal diterima','proposal ditolak','menunggu bibit','bibit siap','bibit ditanam') NOT NULL,
   `tanggal` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -93,12 +93,12 @@ ALTER TABLE `bibit`
   ADD PRIMARY KEY (`idBibit`);
 
 --
--- Indexes for table `donasi`
+-- Indexes for table `pengajuan`
 --
-ALTER TABLE `donasi`
-  ADD PRIMARY KEY (`idDonasi`),
-  ADD KEY `donasi-user` (`idProfil`),
-  ADD KEY `donasi-bibit` (`idBibit`);
+ALTER TABLE `pengajuan`
+  ADD PRIMARY KEY (`idPengajuan`),
+  ADD KEY `pengajuan-bibit` (`idBibit`),
+  ADD KEY `pengajuan-profil` (`idProfil`);
 
 --
 -- Indexes for table `profil`
@@ -124,10 +124,10 @@ ALTER TABLE `bibit`
   MODIFY `idBibit` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `donasi`
+-- AUTO_INCREMENT for table `pengajuan`
 --
-ALTER TABLE `donasi`
-  MODIFY `idDonasi` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `pengajuan`
+  MODIFY `idPengajuan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `profil`
@@ -146,11 +146,11 @@ ALTER TABLE `user`
 --
 
 --
--- Constraints for table `donasi`
+-- Constraints for table `pengajuan`
 --
-ALTER TABLE `donasi`
-  ADD CONSTRAINT `donasi-bibit` FOREIGN KEY (`idBibit`) REFERENCES `bibit` (`idBibit`),
-  ADD CONSTRAINT `donasi-profil` FOREIGN KEY (`idProfil`) REFERENCES `profil` (`idProfil`);
+ALTER TABLE `pengajuan`
+  ADD CONSTRAINT `pengajuan-bibit` FOREIGN KEY (`idBibit`) REFERENCES `bibit` (`idBibit`),
+  ADD CONSTRAINT `pengajuan-profil` FOREIGN KEY (`idProfil`) REFERENCES `profil` (`idProfil`);
 
 --
 -- Constraints for table `profil`
