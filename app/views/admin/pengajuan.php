@@ -14,9 +14,6 @@
         <h4 class="text-blue h4">Data Pengajuan Tanam Bibit</h4>
         <p class="mb-30"></p>
     </div>
-    <div class="pull-right">
-        <a class="btn btn-secondary" href="<?= BASEURL; ?>/admin" role="button"><i class="icon-copy fa fa-home" aria-hidden="true"></i> Kembali</a>
-    </div>
 </div>
 <div class="pb-20">
     <table class="data-table table stripe hover nowrap">
@@ -41,6 +38,8 @@
             ?>
             <tr>
                 <td class="table-plus"><?= $no; ?></td>
+                <td><?= $d['nama']; ?></td>
+                <td><?= $d['bibit']; ?></td>
                 <td><?= $d['jumlahPengajuan']; ?></td>
                 <td><?= $d['tujuan']; ?></td>
                 <td><?= $d['luasLahan']; ?></td>
@@ -52,11 +51,10 @@
                             <i class="dw dw-more"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                            <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> Sedang diverifikasi</a>
-                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Proposal pengajuan diterima</a>
-                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Proposal gagal diajukan</a>
-                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Bibit telah tersedia</a>
-                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Bibit dalam penanaman</a>
+                            <a class="dropdown-item" href="<?= BASEURL; ?>/admin/updatePengajuan/<?= encrypt($d['idPengajuan']); ?>/proposal_diterima"><i class="dw dw-eye"></i> Terima Proposal</a>
+                            <a class="dropdown-item" href="<?= BASEURL; ?>/admin/updatePengajuan/<?= encrypt($d['idPengajuan']); ?>/proposal_ditolak"><i class="dw dw-edit2"></i> Tolak Proposal</a>
+                            <a class="dropdown-item" href="<?= BASEURL; ?>/admin/updatePengajuan/<?= encrypt($d['idPengajuan']); ?>/bibit_dikirim"><i class="dw dw-edit2"></i> Kirim Bibit</a>
+                            <a class="dropdown-item" href="<?= BASEURL; ?>/admin/updatePengajuan/<?= encrypt($d['idPengajuan']); ?>/bibit_ditanam"><i class="dw dw-delete-3"></i> Tanam Bibit</a>
                         </div>
                     </div>
                 </td>

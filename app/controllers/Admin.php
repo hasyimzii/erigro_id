@@ -62,15 +62,18 @@ class Admin extends Controller {
         }
     }
 
-    public function pengajuanInstansi() {
-        $this->view('admin/pengajuanInstansi');
+    public function pengajuan() {
+        $data = $this->model('PengajuanModel')->getPengajuan();
+        $this->view('admin/pengajuan');
     }
 
-    public function pengajuanKelompok() {
-        $this->view('admin/pengajuanKelompok');
+    public function createPengajuan() {
+        exit;
     }
 
-    public function pengajuanPerorangan() {
-        $this->view('admin/pengajuanPerorangan');
+    public function updatePengajuan($idPengajuan, $status) {
+        $id = $this->decrypt($idPengajuan);
+        $this->model('PengajuanModel')->updatePengajuan($id, $status);
+        header('Location: '. BASEURL . '/admin/pengajuan');
     }
 }

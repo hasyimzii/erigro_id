@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2021 at 06:31 PM
+-- Generation Time: Jun 16, 2021 at 09:29 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -35,6 +35,13 @@ CREATE TABLE `bibit` (
   `jadwalAmbil` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `bibit`
+--
+
+INSERT INTO `bibit` (`idBibit`, `bibit`, `jumlahBibit`, `jadwalAmbil`) VALUES
+(1, 'Akasia', 200, '2021-06-30 01:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -48,7 +55,7 @@ CREATE TABLE `pengajuan` (
   `jumlahPengajuan` int(6) NOT NULL,
   `tujuan` varchar(30) NOT NULL,
   `luasLahan` int(6) NOT NULL,
-  `statusPengajuan` enum('menunggu verifikasi','proposal diterima','proposal ditolak','menunggu bibit','bibit siap','bibit ditanam') NOT NULL,
+  `statusPengajuan` enum('menunggu verifikasi','proposal diterima','proposal ditolak','bibit dikirim','bibit ditanam') NOT NULL,
   `tanggal` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -81,6 +88,13 @@ CREATE TABLE `user` (
   `password` varchar(30) NOT NULL,
   `hakAkses` enum('admin','user') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`idUser`, `username`, `password`, `hakAkses`) VALUES
+(1, 'admin', 'admin123', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -121,7 +135,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `bibit`
 --
 ALTER TABLE `bibit`
-  MODIFY `idBibit` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idBibit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pengajuan`
@@ -139,7 +153,7 @@ ALTER TABLE `profil`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
