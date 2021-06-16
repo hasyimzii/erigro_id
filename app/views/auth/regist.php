@@ -8,7 +8,7 @@
     <div class="container-fluid d-flex justify-content-between align-items-center">
         <div class="brand-logo">
             <a href="login.html">
-                <img src="<?= BASEURL; ?>/vendors/images/deskapp-logo.svg" alt="">
+                <img src="<?= BASEURL; ?>/vendors/images/deskapp-logo.png" alt="">
             </a>
         </div>
         <div class="login-menu">

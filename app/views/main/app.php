@@ -19,30 +19,25 @@ function template_login(){
     <head>
         <!-- Basic Page Info -->
         <meta charset="utf-8">
-        <title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
-
+        <title>Login</title>
         <!-- Site favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="$baseurl/vendors/images/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="$baseurl/vendors/images/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="$baseurl/vendors/images/favicon-16x16.png">
-
         <!-- Mobile Specific Metas -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="$baseurl/vendors/styles/core.css">
         <link rel="stylesheet" type="text/css" href="$baseurl/vendors/styles/icon-font.min.css">
         <link rel="stylesheet" type="text/css" href="$baseurl/vendors/styles/style.css">
-
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-
             gtag('config', 'UA-119386393-1');
         </script>
     </head>
@@ -86,7 +81,7 @@ function template_header($title) {
     <body>
     <div class="pre-loader">
     <div class="pre-loader-box">
-    <div class="loader-logo"><img src="$baseurl/vendors/images/deskapp-logo.svg" alt=""></div>
+    <div class="loader-logo"><img src="$baseurl/vendors/images/deskapp-logo.png" alt="" width="400></div>
     <div class='loader-progress' id="progress_div">
     <div class='bar' id='bar1'></div>
     </div>
@@ -236,8 +231,8 @@ function template_sidebar() {
     <div class="left-side-bar">
         <div class="brand-logo">
             <a href="index.html">
-                <img src="$baseurl/vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
-                <img src="$baseurl/vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
+                <img src="$baseurl/vendors/images/deskapp-logo.png" alt="" class="dark-logo">
+                <img src="$baseurl/vendors/images/deskapp-logo-white.png" alt="" class="light-logo">
             </a>
             <div class="close-sidebar" data-toggle="left-sidebar-close">
                 <i class="ion-close-round"></i>
@@ -252,14 +247,9 @@ function template_sidebar() {
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a href="javascript:;" class="dropdown-toggle">
-                            <span class="micon dw dw-apartment"></span><span class="mtext">Konfirmasi Donasi</span>
+                        <a href="$baseurl/admin/pengajuan" class="dropdown-toggle no-arrow">
+                            <span class="micon dw dw-library"></span><span class="mtext">Data Pengajuan</span>
                         </a>
-                        <ul class="submenu">
-                            <li><a href="$baseurl/admin/pengajuanPerorangan">Donasi Perorangan</a></li>
-                            <li><a href="$baseurl/admin/pengajuanKelompok">Donasi Kelompok</a></li>
-                            <li><a href="$baseurl/admin/pengajuanInstansi">Donasi Institusi</a></li>
-                        </ul>
                     </li>
                     <li class="dropdown">
                         <a href="javascript:;" class="dropdown-toggle">
@@ -269,23 +259,6 @@ function template_sidebar() {
                             <li><a href="font-awesome.html">Data Konseling</a></li>
                             <li><a href="foundation.html">Hasil Konseling</a></li>
                         </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="javascript:;" class="dropdown-toggle no-arrow">
-                            <span class="micon dw dw-analytics-21"></span><span class="mtext">Charts</span>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                        <div class="sidebar-small-cap">Extra</div>
-                    </li>
-                    <li>
-                        <a href="https://dropways.github.io/deskapp-free-single-page-website-template/" target="_blank" class="dropdown-toggle no-arrow">
-                            <span class="micon dw dw-paper-plane1"></span>
-                            <span class="mtext">Users Website <img src="vendors/images/coming-soon.png" alt="" width="25"></span>
-                        </a>
                     </li>
                 </ul>
             </div>
