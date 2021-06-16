@@ -11,7 +11,7 @@ function decrypt($sData){
     return $id;
 }
 // template login
-function template_login(){
+function template_login($title){
     $baseurl = BASEURL;
     echo <<<EOT
     <!DOCTYPE html>
@@ -19,7 +19,7 @@ function template_login(){
     <head>
         <!-- Basic Page Info -->
         <meta charset="utf-8">
-        <title>Login</title>
+        <title>$title</title>
         <!-- Site favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="$baseurl/vendors/images/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="$baseurl/vendors/images/favicon-32x32.png">

@@ -2,7 +2,7 @@
     include '../app/views/main/app.php';
 ?>
 
-<?= template_login() ?>
+<?= template_login('Login') ?>
 
 <div class="login-header box-shadow">
     <div class="container-fluid d-flex justify-content-between align-items-center">
