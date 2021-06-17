@@ -105,7 +105,7 @@ function template_home($title) {
         </div>
         </div>
         <div class="header-right">
-            <div class="user-info-dropdown">
+            <div class="user-info-dropdown my-2">
                 <div class="dropdown">
                     <a class="dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown">
                         <span class="user-name text-white">$username</span>
@@ -180,7 +180,7 @@ function template_head($title) {
         </div>
         </div>
         <div class="header-right">
-            <div class="user-info-dropdown">
+            <div class="user-info-dropdown my-2">
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                         <span class="user-name">$username</span>
@@ -242,12 +242,12 @@ function template_admin($title) {
     </div>
     </div>
     </div>
-    <div class="header px-5 py-2">
+    <div class="header px-5 py-1">
         <div class="header-left">
             <div class="menu-icon dw dw-menu"></div>
         </div>
         <div class="header-right">
-            <div class="user-info-dropdown">
+            <div class="user-info-dropdown my-2">
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                         <span class="user-name">$username</span>

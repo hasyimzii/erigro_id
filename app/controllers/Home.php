@@ -7,7 +7,8 @@ class Home extends Controller {
     }
 
     public function riwayat() {
-        $this->view('home/riwayat');
+        $data = $this->model('PengajuanModel')->getPengajuan();
+        $this->view('home/riwayat', $data);
     }
 
     public function about() {
