@@ -23,5 +23,6 @@
     <dd class="col-sm-9"><?= $data['jumlahBibit'] ?></dd>
     <dt class="col-sm-3">Jadwal Ambil</dt>
     <dd class="col-sm-9"><?= $data['jadwalAmbil'] ?></dd>
+</dl>
 </div>
 <?= template_footer() ?>

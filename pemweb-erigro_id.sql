@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 17, 2021 at 01:15 PM
+-- Generation Time: Jun 17, 2021 at 03:13 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -40,7 +40,11 @@ CREATE TABLE `bibit` (
 --
 
 INSERT INTO `bibit` (`idBibit`, `bibit`, `jumlahBibit`, `jadwalAmbil`) VALUES
-(1, 'Akasia', 200, '2021-06-30 01:00:00');
+(1, 'Akasia', 500, '2021-06-30 01:00:00'),
+(2, 'Alpukat', 200, '2021-06-17 20:06:00'),
+(3, 'Belimbing', 150, '2021-06-16 20:07:00'),
+(4, 'Mangga', 300, '2021-06-17 20:12:00'),
+(5, 'Salak', 200, '2021-06-18 20:12:00');
 
 -- --------------------------------------------------------
 
@@ -64,7 +68,10 @@ CREATE TABLE `pengajuan` (
 --
 
 INSERT INTO `pengajuan` (`idPengajuan`, `idUser`, `idBibit`, `jumlahPengajuan`, `tujuan`, `luasLahan`, `statusPengajuan`, `tanggal`) VALUES
-(1, 1, 1, 30, 'rumahquu', 25, 'bibit_ditanam', '2021-06-24 00:00:00');
+(1, 1, 1, 30, 'rumahquu', 25, 'bibit_ditanam', '2021-06-24 00:00:00'),
+(8, 2, 1, 50, 'asd', 1, 'proposal_diterima', '2021-06-17 13:56:22'),
+(9, 2, 1, 50, 'qwe', 20, 'menunggu_verifikasi', '2021-06-17 13:58:42'),
+(10, 2, 1, 50, 'qwe', 20, 'menunggu_verifikasi', '2021-06-17 13:59:36');
 
 -- --------------------------------------------------------
 
@@ -87,7 +94,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`idUser`, `username`, `password`, `hakAkses`, `namaLengkap`, `noHp`) VALUES
 (1, 'admin', 'admin123', 'admin', 'Admin', '0000000'),
-(2, 'user', 'user123', 'user', 'User', '088888888888');
+(2, 'user', 'user123', 'user', 'User', '088888888888'),
+(3, 'asd', 'asd123', 'user', 'aku', '089878997');
 
 --
 -- Indexes for dumped tables
@@ -121,19 +129,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `bibit`
 --
 ALTER TABLE `bibit`
-  MODIFY `idBibit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idBibit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `pengajuan`
 --
 ALTER TABLE `pengajuan`
-  MODIFY `idPengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idPengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
