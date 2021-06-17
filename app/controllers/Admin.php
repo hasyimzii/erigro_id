@@ -64,7 +64,7 @@ class Admin extends Controller {
 
     public function pengajuan() {
         $data = $this->model('PengajuanModel')->getPengajuan();
-        $this->view('admin/pengajuan');
+        $this->view('admin/pengajuan', $data);
     }
 
     public function createPengajuan() {

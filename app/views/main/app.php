@@ -45,8 +45,8 @@ function template_login($title){
     EOT;
 }
 
-// template header (seperti blade laravel)
-function template_header($title) {
+// template admin (seperti blade laravel)
+function template_admin($title) {
     $baseurl = BASEURL;
     echo <<<EOT
     <!DOCTYPE html>

@@ -2,7 +2,7 @@
     include '../app/views/main/app.php';
 ?>
 
-<?= template_header('Bibit') ?>
+<?= template_admin('Bibit') ?>
 <?= template_navbar() ?>
 <?= template_sidebar() ?>
 <div class="main-container">

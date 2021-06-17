@@ -2,7 +2,7 @@
     include '../app/views/main/app.php';
 ?>
 
-<?= template_header('Pengajuan Perorangan') ?>
+<?= template_admin('Pengajuan Perorangan') ?>
 <?= template_navbar() ?>
 <?= template_sidebar() ?>
 <div class="main-container">
@@ -35,15 +35,16 @@
             $no = 0;
             foreach($data as $d) : 
                 $no++;
+                $string = str_replace('_', ' ', $d['statusPengajuan']);
             ?>
             <tr>
                 <td class="table-plus"><?= $no; ?></td>
-                <td><?= $d['nama']; ?></td>
+                <td><?= $d['namaLengkap']; ?></td>
                 <td><?= $d['bibit']; ?></td>
                 <td><?= $d['jumlahPengajuan']; ?></td>
                 <td><?= $d['tujuan']; ?></td>
                 <td><?= $d['luasLahan']; ?></td>
-                <td><?= $d['statusPengajuan']; ?></td>
+                <td><?= $string; ?></td>
                 <td><?= $d['tanggal']; ?></td>
                 <td>
                     <div class="dropdown">
@@ -51,10 +52,10 @@
                             <i class="dw dw-more"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                            <a class="dropdown-item" href="<?= BASEURL; ?>/admin/updatePengajuan/<?= encrypt($d['idPengajuan']); ?>/proposal_diterima"><i class="dw dw-eye"></i> Terima Proposal</a>
-                            <a class="dropdown-item" href="<?= BASEURL; ?>/admin/updatePengajuan/<?= encrypt($d['idPengajuan']); ?>/proposal_ditolak"><i class="dw dw-edit2"></i> Tolak Proposal</a>
-                            <a class="dropdown-item" href="<?= BASEURL; ?>/admin/updatePengajuan/<?= encrypt($d['idPengajuan']); ?>/bibit_dikirim"><i class="dw dw-edit2"></i> Kirim Bibit</a>
-                            <a class="dropdown-item" href="<?= BASEURL; ?>/admin/updatePengajuan/<?= encrypt($d['idPengajuan']); ?>/bibit_ditanam"><i class="dw dw-delete-3"></i> Tanam Bibit</a>
+                            <a class="dropdown-item" href="<?= BASEURL; ?>/admin/updatePengajuan/<?= encrypt($d['idPengajuan']); ?>/proposal_diterima"><i class="icon-copy fa fa-check" aria-hidden="true"></i> Terima Proposal</a>
+                            <a class="dropdown-item" href="<?= BASEURL; ?>/admin/updatePengajuan/<?= encrypt($d['idPengajuan']); ?>/proposal_ditolak"><i class="icon-copy fa fa-close" aria-hidden="true"></i> Tolak Proposal</a>
+                            <a class="dropdown-item" href="<?= BASEURL; ?>/admin/updatePengajuan/<?= encrypt($d['idPengajuan']); ?>/bibit_dikirim"><i class="icon-copy fa fa-truck" aria-hidden="true"></i> Kirim Bibit</a>
+                            <a class="dropdown-item" href="<?= BASEURL; ?>/admin/updatePengajuan/<?= encrypt($d['idPengajuan']); ?>/bibit_ditanam"><i class="icon-copy fa fa-tree" aria-hidden="true"></i> Tanam Bibit</a>
                         </div>
                     </div>
                 </td>
