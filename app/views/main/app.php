@@ -227,7 +227,7 @@ function template_head($title) {
     </div>
     <div class="header px-5 py-1" style="background: transparent; width: 100%;">
         <div class="header-left">
-        <a href="$baseurl/admin">
+        <a href="$baseurl/home/landing">
             <img src="$baseurl/vendors/images/deskapp-logo.png" alt="" width="190">
         </a>
         <div class="ml-5 my-3">
