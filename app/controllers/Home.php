@@ -2,8 +2,12 @@
 
 class Home extends Controller {
     public function index() {
+        $this->view('home/index');
+    }
+
+    public function landing() {
         $data = $this->model('BibitModel')->getBibit();
-        $this->view('home/index', $data);
+        $this->view('home/landing', $data);
     }
 
     public function riwayat() {

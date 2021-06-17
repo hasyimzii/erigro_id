@@ -28,7 +28,7 @@ class Auth extends Controller {
 			$_SESSION['username'] = $login['username'];
 
             if($login['hakAkses'] === 'user') {
-                header('location: ../home/index');
+                header('location: ../home/landing');
             }
             elseif($login['hakAkses'] === 'admin') {
                 header('location: ../admin/index');
