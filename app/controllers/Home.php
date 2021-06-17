@@ -2,16 +2,12 @@
 
 class Home extends Controller {
     public function index() {
-        $data = $this->model('UserModel')->getUser();
+        $data = $this->model('BibitModel')->getBibit();
         $this->view('home/index', $data);
     }
 
-    public function profil() {
-        var_dump(a);
-    }
-
-    public function pengajuan() {
-        $this->view('home/pengajuan');
+    public function about() {
+        $this->view('home/about');
     }
 
     public function storePengajuan() {

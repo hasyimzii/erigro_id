@@ -25,7 +25,18 @@ class Auth extends Controller {
 			}
  
 			$_SESSION['id'] = $this->encrypt(intval($login['id']));
-            $this->view('home/index');
+			$_SESSION['username'] = $login['username'];
+
+            if($login['hakAkses'] === 'user') {
+                header('location: ../home/index');
+            }
+            elseif($login['hakAkses'] === 'admin') {
+                header('location: ../admin/index');
+            }
+            else {
+                $this->view('auth/login');
+                exit;
+            }
         }
     }
 
@@ -56,5 +67,15 @@ class Auth extends Controller {
             $this->view('auth/regist');
             exit;
         }
+    }
+
+    public function logout() {
+        session_destroy();
+ 
+        if (isset($_COOKIE["username"]) AND isset($_COOKIE["password"])){
+            setcookie("username", '', time() - (3600));
+            setcookie("password", '', time() - (3600));
+        }
+        header('location: ../auth/login');
     }
 }

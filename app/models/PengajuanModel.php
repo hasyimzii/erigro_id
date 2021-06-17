@@ -27,10 +27,20 @@ class PengajuanModel {
         $this->db->bind('jumlahPengajuan', $data['jumlahPengajuan']);
         $this->db->bind('tujuan', $data['tujuan']);
         $this->db->bind('luasLahan', $data['luasLahan']);
-        $this->db->bind('statusPengajuan', $data['statusPengajuan']);
         $this->db->bind('tanggal', date('Y-m-d H:i:s'));
 
         $this->db->execute();
+        
+        $this->db->query('SELECT * FROM bibit WHERE idBibit=:id');
+        $this->db->bind('id', $data['idBibit']);
+        $bibitNow = $this->db->single();
+
+        $res = intval($bibitNow['jumlahBibit']) - intval($data['jumlahPengajuan']);
+
+        $query2 = "UPDATE $this->table SET jumlahBibit=:jumlahBibit WHERE idBibit=:id";
+        $this->db->query($query2);
+        $this->db->bind('id', $data['idBibit']);
+        $this->db->bind('jumlahBibit', $res);
         return $this->db->rowCount();
     }
 

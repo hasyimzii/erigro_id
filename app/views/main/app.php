@@ -48,6 +48,7 @@ function template_login($title){
 // template home (seperti blade laravel)
 function template_home($title) {
     $baseurl = BASEURL;
+    $username = $_SESSION['username'];
     echo <<<EOT
     <!DOCTYPE html>
     <html>
@@ -91,24 +92,26 @@ function template_home($title) {
     </div>
     </div>
     </div>
-    <div class="header">
+    <div class="header px-5 py-1" style="background: transparent; width: 100%;">
         <div class="header-left">
-            <div class="menu-icon dw dw-menu"></div>
+        <a href="$baseurl/admin">
+            <img src="$baseurl/vendors/images/deskapp-logo-white.png" alt="" width="190">
+        </a>
+        <div class="ml-5 my-3">
+            <a href="$baseurl/home/riwayat" class="text-white">Riwayat</a>
+        </div>
+        <div class="ml-5 my-3">
+            <a href="$baseurl/home/about" class="text-white">About</a>
+        </div>
         </div>
         <div class="header-right">
             <div class="user-info-dropdown">
                 <div class="dropdown">
-                    <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                        <span class="user-icon">
-                            <img src="$baseurl/vendors/images/photo1.jpg" alt="">
-                        </span>
-                        <span class="user-name">Admin</span>
+                    <a class="dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown">
+                        <span class="user-name text-white">$username</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                        <a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
-                        <a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
-                        <a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
-                        <a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
+                        <a class="dropdown-item" href="$baseurl/auth/logout"><i class="dw dw-logout"></i> Log Out</a>
                     </div>
                 </div>
             </div>
@@ -120,6 +123,7 @@ function template_home($title) {
 // template admin (seperti blade laravel)
 function template_admin($title) {
     $baseurl = BASEURL;
+    $username = $_SESSION['username'];
     echo <<<EOT
     <!DOCTYPE html>
     <html>
@@ -163,7 +167,7 @@ function template_admin($title) {
     </div>
     </div>
     </div>
-    <div class="header">
+    <div class="header px-5 py-2">
         <div class="header-left">
             <div class="menu-icon dw dw-menu"></div>
         </div>
@@ -171,13 +175,10 @@ function template_admin($title) {
             <div class="user-info-dropdown">
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                        <span class="user-icon">
-                            <img src="$baseurl/vendors/images/photo1.jpg" alt="">
-                        </span>
-                        <span class="user-name">Admin</span>
+                        <span class="user-name">$username</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                        <a class="dropdown-item" href="$baseurl/auth/login"><i class="dw dw-logout"></i> Log Out</a>
+                        <a class="dropdown-item" href="$baseurl/auth/logout"><i class="dw dw-logout"></i> Log Out</a>
                     </div>
                 </div>
             </div>
@@ -192,7 +193,7 @@ function template_sidebar() {
     echo <<<EOT
     <div class="left-side-bar">
         <div class="brand-logo">
-            <a href="index.html">
+            <a href="$baseurl/admin">
                 <img src="$baseurl/vendors/images/deskapp-logo.png" alt="" class="dark-logo">
                 <img src="$baseurl/vendors/images/deskapp-logo-white.png" alt="" class="light-logo">
             </a>
@@ -211,6 +212,11 @@ function template_sidebar() {
                     <li class="dropdown">
                         <a href="$baseurl/admin/pengajuan" class="dropdown-toggle no-arrow">
                             <span class="micon dw dw-inbox"></span><span class="mtext">Data Pengajuan</span>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="$baseurl/admin/pegawai" class="dropdown-toggle no-arrow">
+                            <span class="micon dw dw-user1"></span><span class="mtext">Data Pegawai</span>
                         </a>
                     </li>
                 </ul>

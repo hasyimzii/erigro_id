@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2021 at 09:29 PM
+-- Generation Time: Jun 17, 2021 at 01:15 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -50,31 +50,21 @@ INSERT INTO `bibit` (`idBibit`, `bibit`, `jumlahBibit`, `jadwalAmbil`) VALUES
 
 CREATE TABLE `pengajuan` (
   `idPengajuan` int(11) NOT NULL,
-  `idProfil` int(11) NOT NULL,
+  `idUser` int(11) NOT NULL,
   `idBibit` int(11) NOT NULL,
   `jumlahPengajuan` int(6) NOT NULL,
   `tujuan` varchar(30) NOT NULL,
   `luasLahan` int(6) NOT NULL,
-  `statusPengajuan` enum('menunggu verifikasi','proposal diterima','proposal ditolak','bibit dikirim','bibit ditanam') NOT NULL,
+  `statusPengajuan` enum('menunggu_verifikasi','proposal_diterima','proposal_ditolak','bibit_dikirim','bibit_ditanam') NOT NULL,
   `tanggal` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `profil`
+-- Dumping data for table `pengajuan`
 --
 
-CREATE TABLE `profil` (
-  `idProfil` int(11) NOT NULL,
-  `idUser` int(11) NOT NULL,
-  `namaLengkap` varchar(30) NOT NULL,
-  `alamat` varchar(30) NOT NULL,
-  `nik` varchar(30) NOT NULL,
-  `noHp` varchar(15) NOT NULL,
-  `tempatLahir` varchar(25) NOT NULL,
-  `tanggalLahir` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `pengajuan` (`idPengajuan`, `idUser`, `idBibit`, `jumlahPengajuan`, `tujuan`, `luasLahan`, `statusPengajuan`, `tanggal`) VALUES
+(1, 1, 1, 30, 'rumahquu', 25, 'bibit_ditanam', '2021-06-24 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -86,15 +76,18 @@ CREATE TABLE `user` (
   `idUser` int(11) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
-  `hakAkses` enum('admin','user') NOT NULL
+  `hakAkses` enum('admin','user') NOT NULL,
+  `namaLengkap` varchar(30) NOT NULL,
+  `noHp` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`idUser`, `username`, `password`, `hakAkses`) VALUES
-(1, 'admin', 'admin123', 'admin');
+INSERT INTO `user` (`idUser`, `username`, `password`, `hakAkses`, `namaLengkap`, `noHp`) VALUES
+(1, 'admin', 'admin123', 'admin', 'Admin', '0000000'),
+(2, 'user', 'user123', 'user', 'User', '088888888888');
 
 --
 -- Indexes for dumped tables
@@ -112,14 +105,7 @@ ALTER TABLE `bibit`
 ALTER TABLE `pengajuan`
   ADD PRIMARY KEY (`idPengajuan`),
   ADD KEY `pengajuan-bibit` (`idBibit`),
-  ADD KEY `pengajuan-profil` (`idProfil`);
-
---
--- Indexes for table `profil`
---
-ALTER TABLE `profil`
-  ADD PRIMARY KEY (`idProfil`),
-  ADD KEY `profil-user` (`idUser`);
+  ADD KEY `pengajuan-user` (`idUser`);
 
 --
 -- Indexes for table `user`
@@ -141,19 +127,13 @@ ALTER TABLE `bibit`
 -- AUTO_INCREMENT for table `pengajuan`
 --
 ALTER TABLE `pengajuan`
-  MODIFY `idPengajuan` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `profil`
---
-ALTER TABLE `profil`
-  MODIFY `idProfil` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -164,13 +144,7 @@ ALTER TABLE `user`
 --
 ALTER TABLE `pengajuan`
   ADD CONSTRAINT `pengajuan-bibit` FOREIGN KEY (`idBibit`) REFERENCES `bibit` (`idBibit`),
-  ADD CONSTRAINT `pengajuan-profil` FOREIGN KEY (`idProfil`) REFERENCES `profil` (`idProfil`);
-
---
--- Constraints for table `profil`
---
-ALTER TABLE `profil`
-  ADD CONSTRAINT `profil-user` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `pengajuan-user` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
