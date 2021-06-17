@@ -23,7 +23,7 @@ class UserModel {
     public function storeRegist($data) {
         $this->db->query("SELECT * FROM $this->table WHERE username=:username");
         $this->db->bind('username', $data['username']);
-        $check = count($this->db->single());
+        $check = $this->db->single();
 
         if($check != 0) {
             return "0";
