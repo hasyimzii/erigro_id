@@ -25,7 +25,7 @@
                 <th>Tujuan</th>
                 <th>Luas Lahan</th>
                 <th>Status</th>
-                <th>Tanggal</th>
+                <!-- <th>Tanggal</th> -->
                 <th class="datatable-nosort">Action</th>
             </tr>
         </thead>
@@ -44,7 +44,7 @@
                 <td><?= $d['tujuan']; ?></td>
                 <td><?= $d['luasLahan']; ?></td>
                 <td><?= $string; ?></td>
-                <td><?= $d['tanggal']; ?></td>
+                <!-- <td><?= $d['tanggal']; ?></td> -->
                 <td>
                     <div class="dropdown">
                         <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
