@@ -13,7 +13,7 @@ class UserModel {
         return $this->db->resultSet();
     }
 
-    public function goLogin($data) {
+    public function getLogin($data) {
         $this->db->query("SELECT * FROM $this->table WHERE username=:username && password=:password");
         $this->db->bind('username', $data['username']);
         $this->db->bind('password', $data['password']);
@@ -23,7 +23,7 @@ class UserModel {
     public function storeRegist($data) {
         $this->db->query("SELECT * FROM $this->table WHERE username=:username");
         $this->db->bind('username', $data['username']);
-        $check = $this->db->single();
+        $check = count($this->db->single());
 
         if($check != 0) {
             return "0";
