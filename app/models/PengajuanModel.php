@@ -8,7 +8,13 @@ class PengajuanModel {
         $this->db = new Database;
     }
 
-    public function getPengajuan() {
+    public function getPengajuanRiwayat($id) {
+        $this->db->query("SELECT * FROM $this->table INNER JOIN bibit ON pengajuan.idBibit = bibit.idBibit INNER JOIN user ON pengajuan.idUser = user.idUser WHERE pengajuan.idUser=:id");
+        $this->db->bind('id', $id);
+        return $this->db->resultSet();
+    }
+
+    public function getPengajuanUser() {
         $this->db->query("SELECT * FROM $this->table INNER JOIN bibit ON pengajuan.idBibit = bibit.idBibit INNER JOIN user ON pengajuan.idUser = user.idUser");
         return $this->db->resultSet();
     }

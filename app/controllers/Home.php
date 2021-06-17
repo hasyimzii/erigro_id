@@ -11,7 +11,8 @@ class Home extends Controller {
     }
 
     public function riwayat() {
-        $data = $this->model('PengajuanModel')->getPengajuan();
+        $id = $this->decrypt($_SESSION['id']);
+        $data = $this->model('PengajuanModel')->getPengajuanRiwayat($id);
         $this->view('home/riwayat', $data);
     }
 
@@ -22,12 +23,12 @@ class Home extends Controller {
     public function storePengajuan() {
         if($this->model('PengajuanModel')->storePengajuan($_POST)>0) {
             Flasher::setFlash('Data berhasil ditambahkan!', 'success');
-            header('Location: '. BASEURL . '/home');
+            header('Location: '. BASEURL . '/home/landing');
             exit;
         }
         else {
             Flasher::setFlash('Data gagal ditambahkan!', 'danger');
-            header('Location: '. BASEURL . '/home');
+            header('Location: '. BASEURL . '/home/landing');
             exit;
         }
     }
