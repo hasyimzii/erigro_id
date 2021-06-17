@@ -6,6 +6,10 @@ class Home extends Controller {
         $this->view('home/index', $data);
     }
 
+    public function riwayat() {
+        $this->view('home/riwayat');
+    }
+
     public function about() {
         $this->view('home/about');
     }

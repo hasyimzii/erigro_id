@@ -67,13 +67,14 @@ class Admin extends Controller {
         $this->view('admin/pengajuan', $data);
     }
 
-    public function createPengajuan() {
-        exit;
-    }
-
     public function updatePengajuan($idPengajuan, $status) {
         $id = $this->decrypt($idPengajuan);
         $this->model('PengajuanModel')->updatePengajuan($id, $status);
         header('Location: '. BASEURL . '/admin/pengajuan');
+    }
+
+    public function pengguna() {
+        $data = $this->model('UserModel')->getUser();
+        $this->view('admin/pengguna', $data);
     }
 }

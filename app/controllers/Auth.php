@@ -24,7 +24,7 @@ class Auth extends Controller {
 				setcookie("password", $login['password'], time() + (86400 * 30)); 
 			}
  
-			$_SESSION['id'] = $this->encrypt(intval($login['id']));
+			$_SESSION['id'] = $this->encrypt(intval($login['idUser']));
 			$_SESSION['username'] = $login['username'];
 
             if($login['hakAkses'] === 'user') {

@@ -120,6 +120,81 @@ function template_home($title) {
     EOT;
 }
 
+// template head (seperti blade laravel)
+function template_head($title) {
+    $baseurl = BASEURL;
+    $username = $_SESSION['username'];
+    echo <<<EOT
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <!-- Basic Page Info -->
+        <meta charset="utf-8">
+        <title>$title</title>
+        <!-- Site favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="$baseurl/vendors/images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="$baseurl/vendors/images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="$baseurl/vendors/images/favicon-16x16.png">
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="$baseurl/vendors/styles/core.css">
+        <link rel="stylesheet" type="text/css" href="$baseurl/vendors/styles/icon-font.min.css">
+        <link rel="stylesheet" type="text/css" href="$baseurl/src/plugins/datatables/css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet" type="text/css" href="$baseurl/src/plugins/datatables/css/responsive.bootstrap4.min.css">
+        <link rel="stylesheet" type="text/css" href="$baseurl/vendors/styles/style.css">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-119386393-1');
+        </script>
+    </head>
+    <body>
+    <div class="pre-loader">
+    <div class="pre-loader-box">
+    <div class="loader-logo"><img src="$baseurl/vendors/images/deskapp-logo.png" alt="" width="400></div>
+    <div class='loader-progress' id="progress_div">
+    <div class='bar' id='bar1'></div>
+    </div>
+    <div class='percent' id='percent1'>0%</div>
+    <div class="loading-text">
+        Loading...
+    </div>
+    </div>
+    </div>
+    <div class="header px-5 py-1" style="background: transparent; width: 100%;">
+        <div class="header-left">
+        <a href="$baseurl/admin">
+            <img src="$baseurl/vendors/images/deskapp-logo.png" alt="" width="190">
+        </a>
+        <div class="ml-5 my-3">
+            <a href="$baseurl/home/riwayat">Riwayat</a>
+        </div>
+        <div class="ml-5 my-3">
+            <a href="$baseurl/home/about">About</a>
+        </div>
+        </div>
+        <div class="header-right">
+            <div class="user-info-dropdown">
+                <div class="dropdown">
+                    <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                        <span class="user-name">$username</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                        <a class="dropdown-item" href="$baseurl/auth/logout"><i class="dw dw-logout"></i> Log Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    EOT;
+}
+
 // template admin (seperti blade laravel)
 function template_admin($title) {
     $baseurl = BASEURL;
@@ -215,8 +290,8 @@ function template_sidebar() {
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a href="$baseurl/admin/pegawai" class="dropdown-toggle no-arrow">
-                            <span class="micon dw dw-user1"></span><span class="mtext">Data Pegawai</span>
+                        <a href="$baseurl/admin/pengguna" class="dropdown-toggle no-arrow">
+                            <span class="micon dw dw-user1"></span><span class="mtext">Data Pengguna</span>
                         </a>
                     </li>
                 </ul>

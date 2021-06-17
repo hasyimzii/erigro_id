@@ -37,10 +37,11 @@ class PengajuanModel {
 
         $res = intval($bibitNow['jumlahBibit']) - intval($data['jumlahPengajuan']);
 
-        $query2 = "UPDATE $this->table SET jumlahBibit=:jumlahBibit WHERE idBibit=:id";
+        $query2 = "UPDATE bibit SET jumlahBibit=:jumlahBibit WHERE idBibit=:id";
         $this->db->query($query2);
         $this->db->bind('id', $data['idBibit']);
         $this->db->bind('jumlahBibit', $res);
+        $this->db->execute();
         return $this->db->rowCount();
     }
 

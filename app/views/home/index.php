@@ -24,7 +24,7 @@ Mulai Pengajuan
       </div>
       <div class="modal-body">
       <form action="<?= BASEURL; ?>/home/storePengajuan" method="post"> 
-        <input type="hidden" name="idUser" value="<?= $_SESSION['id']; ?>">
+        <input type="hidden" name="idUser" value="<?= decrypt($_SESSION['id']); ?>">
         <div class="form-group">
 									<label>Bibit</label>
 									<select class="custom-select2 form-control" name="idBibit" style="width: 100%; height: 38px;">
