@@ -7,7 +7,7 @@
 <div class="login-header box-shadow">
     <div class="container-fluid d-flex justify-content-between align-items-center">
         <div class="brand-logo">
-            <a href="login.html">
+            <a href="<?= BASEURL; ?>">
                 <img src="<?= BASEURL; ?>/vendors/images/deskapp-logo.png" alt="">
             </a>
         </div>
@@ -27,25 +27,9 @@
             <div class="col-md-6 col-lg-5">
                 <div class="login-box bg-white box-shadow border-radius-10">
                     <div class="login-title">
-                        <h2 class="text-center text-primary">Login To Erigro.id</h2>
+                        <h2 class="text-center text-primary">Login ke erigro.id</h2>
                     </div>
                     <form>
-                        <div class="select-role">
-                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn active">
-                                    <input type="radio" name="options" id="admin">
-                                    <div class="icon"><img src="<?= BASEURL; ?>/vendors/images/briefcase.svg" class="svg" alt=""></div>
-                                    <span>I'm</span>
-                                    Users
-                                </label>
-                                <label class="btn">
-                                    <input type="radio" name="options" id="user">
-                                    <div class="icon"><img src="<?= BASEURL; ?>/vendors/images/person.svg" class="svg" alt=""></div>
-                                    <span>I'm</span>
-                                    Admin
-                                </label>
-                            </div>
-                        </div>
                         <div class="input-group custom">
                             <input type="text" class="form-control form-control-lg" placeholder="Username">
                             <div class="input-group-append custom">
@@ -62,7 +46,7 @@
                             <div class="col-6">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    <label class="custom-control-label" for="customCheck1">Remember</label>
+                                    <label class="custom-control-label" for="customCheck1">Ingat saya</label>
                                 </div>
                             </div>
                         </div>

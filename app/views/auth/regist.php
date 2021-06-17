@@ -2,12 +2,12 @@
     include '../app/views/main/app.php';
 ?>
 
-<?= template_login() ?>
+<?= template_login('Regist') ?>
 
 <div class="login-header box-shadow">
     <div class="container-fluid d-flex justify-content-between align-items-center">
         <div class="brand-logo">
-            <a href="login.html">
+            <a href="<?= BASEURL; ?>/">
                 <img src="<?= BASEURL; ?>/vendors/images/deskapp-logo.png" alt="">
             </a>
         </div>
@@ -27,48 +27,53 @@
             <div class="col-md-6 col-lg-5">
                 <div class="login-box bg-white box-shadow border-radius-10">
                     <div class="login-title">
-                        <h2 class="text-center text-primary">Create Your Erigro Account</h2>
+                        <h2 class="text-center text-primary">Buat akun erigro.id</h2>
                     </div>
-                    <form>
+                    <div class="card-box mb-30">
+                        <?php Flasher::flash(); ?>
+                    </div>
+                    <form action="<?= BASEURL; ?>/auth/storeRegist" method="post">
                         <div class="form-wrap max-width-600 mx-auto">
                             <div class="form-group row">
-                                <label class="col-sm-4 col-form-label">Full Name*</label>
+                                <label class="col-sm-4 col-form-label">Nama Lengkap*</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" name="namaLengkap">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label">Nomor HP*</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" name="noHp">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Username*</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" name="username">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Password*</label>
                                 <div class="col-sm-8">
-                                    <input type="password" class="form-control">
+                                    <input type="password" class="form-control" name="password">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-4 col-form-label">Confirm Password*</label>
+                                <label class="col-sm-4 col-form-label">Konfirmasi Password*</label>
                                 <div class="col-sm-8">
-                                    <input type="password" class="form-control">
+                                    <input type="password" class="form-control" name="confpass">
                                 </div>
                             </div>
                         </div>
                         <div class="custom-control custom-checkbox mt-4">
-                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                            <label class="custom-control-label" for="customCheck1">I have read and agreed to the terms of services and privacy policy</label>
+                            <input type="checkbox" class="custom-control-input" id="customCheck1" name="agree">
+                            <label class="custom-control-label" for="customCheck1">Saya telah menyetujui kebijakan privasi</label>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="input-group mb-0">
-                                    <!--
-                                        use code for form submit
-                                        <input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
-                                    -->
-                                    <button type="button" class="btn mb-20 btn-primary btn-block" id="sa-success" href="<?= BASEURL; ?>/auth/login">Submit</button>
+                                    <button type="submit" class="btn mb-20 btn-primary btn-block">Daftar</button>
                                 </div>
                             </div>
                         </div>

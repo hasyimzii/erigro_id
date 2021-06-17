@@ -3,14 +3,13 @@
 ?>
 
 <?= template_admin('Edit Bibit') ?>
-<?= template_navbar() ?>
 <?= template_sidebar() ?>
 <div class="main-container">
 <!-- Default Basic Forms Start -->
 <div class="pd-20 card-box mb-30">
 <div class="clearfix">
     <div class="pull-left">
-        <h4 class="text-blue h4">Edit Data Bibit Erigro.id</h4>
+        <h4 class="text-blue h4">Edit Data Bibit erigro.id</h4>
         <p class="mb-30">Isikan form dengan sebenar-benarnya</p>
     </div>
     <div class="pull-right">

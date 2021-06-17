@@ -9,7 +9,7 @@ class PengajuanModel {
     }
 
     public function getPengajuan() {
-        $this->db->query("SELECT * FROM $this->table INNER JOIN bibit ON pengajuan.idBibit = bibit.idBibit INNER JOIN profil ON pengajuan.idProfil = profil.idProfil");
+        $this->db->query("SELECT * FROM $this->table INNER JOIN bibit ON pengajuan.idBibit = bibit.idBibit INNER JOIN user ON pengajuan.idUser = user.idUser");
         return $this->db->resultSet();
     }
 
@@ -20,9 +20,9 @@ class PengajuanModel {
     }
 
     public function storePengajuan($data) {
-        $query = "INSERT INTO $this->table VALUES('', :idProfil, :idBibit, :jumlahPengajuan, :tujuan, :luasLahan, 'menunggu_verifikasi', :tanggal)";
+        $query = "INSERT INTO $this->table VALUES('', :idUser, :idBibit, :jumlahPengajuan, :tujuan, :luasLahan, 'menunggu_verifikasi', :tanggal)";
         $this->db->query($query);
-        $this->db->bind('idProfil', $data['idProfil']);
+        $this->db->bind('idUser', $data['idUser']);
         $this->db->bind('idBibit', $data['idBibit']);
         $this->db->bind('jumlahPengajuan', $data['jumlahPengajuan']);
         $this->db->bind('tujuan', $data['tujuan']);
