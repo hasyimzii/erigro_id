@@ -93,15 +93,9 @@ function template_home($title) {
     </div>
     <div class="header px-5 py-1" style="background: transparent; width: 100%;">
         <div class="header-left">
-        <a href="$baseurl/admin">
+        <a href="$baseurl/home">
             <img src="$baseurl/vendors/images/deskapp-logo-white.png" alt="" width="190">
         </a>
-        <div class="ml-5 my-3">
-            <a href="$baseurl/home/riwayat" class="text-white">Riwayat</a>
-        </div>
-        <div class="ml-5 my-3">
-            <a href="$baseurl/home/about" class="text-white">About</a>
-        </div>
         </div>
         <div class="header-right">
         </div>
@@ -158,7 +152,7 @@ function template_landing($title) {
     </div>
     <div class="header px-5 py-1" style="background: transparent; width: 100%;">
         <div class="header-left">
-        <a href="$baseurl/admin">
+        <a href="$baseurl/home/landing">
             <img src="$baseurl/vendors/images/deskapp-logo-white.png" alt="" width="190">
         </a>
         <div class="ml-5 my-3">
